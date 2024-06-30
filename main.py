@@ -116,32 +116,27 @@ async def artiNama(bot : Client, message : Message):
         await asyncio.sleep(e.value)
         await message.reply_text(f"🐚 <b>{KERANG}</b>")
 
-@bot.on_message(filters.command("cekKhodam") & filters.group)
+@bot.on_message(filters.command("artiNama") & filters.group)
 @gcast
 async def cekkhodam(bot : Client, message : Message):
-    khodam = random.choice(Pasukan)
-    kosong = ["Kosong"]
+async def artiNama(bot : Client, message : Message):
     chat_id = message.chat.id
     msg = get_arg(message)
 
-    text = f"{random.choice(EMOJIS)} <b>{msg}</b> Memiliki Khodam **{khodam}**"
-    txt = f"{random.choice(EMOJIS)} Saya Tidak Melihat Khodam {msg} - Artinya Khodam {msg} <b>Kosong</b>"
+    arti = random.choice(Arti)
+    deskripsi = random.choice(Deskripsi)
     if not msg:
-        return await message.reply(text="❌ Berikan Saya Sebuah Nama - Contoh /cekKhodam Sabrina")
+        return await message.reply(text="❌ Berikan Saya Sebuah Nama - Contoh /artiNama Sabrina")
 
-    xx = await message.reply(f"🔍 Sedang Melihat Khodam {msg} ....")
-
-    if khodam in kosong:
-        await bot.send_chat_action(message.chat.id, enums.ChatAction.UPLOAD_PHOTO)
-        await bot.send_photo(chat_id, f"photo/{khodam}.jpg", caption=txt)
-        return await xx.delete()
+    xx = await message.reply(f"{EMOJIS}")
 
     try: 
-        await bot.send_photo(chat_id, f"photo/{khodam}.jpg", caption=text)
+        await bot.send_message(chat_id, DESKRIPTIF.format(msg, arti, deskripsi))
         await xx.delete()
-    except BaseException as e:
-        return await message.reply(f"`{e}`\n\nBuruan lapor @pikyus7")
-        
+    except FloodWait as e:
+        await asyncio.sleep(e.value)
+        await message.reply_text(f"🐚 <b>{KERANG}</b>")
+
 async def send_msg(chat_id, message: Message):
     try:
         if BROADCAST_AS_COPY is False:

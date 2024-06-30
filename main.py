@@ -107,7 +107,7 @@ async def artiNama(bot : Client, message : Message):
     if not msg:
         return await message.reply(text="❌ Berikan Saya Sebuah Nama - Contoh /artiNama Sabrina")
 
-    xx = await message.reply(f"{EMOJIS}")
+    xx = await message.reply(f"{random.choice(EMOJIS)}")
 
     try: 
         await bot.send_message(chat_id, DESKRIPTIF.format(msg, arti, deskripsi))
@@ -127,7 +127,7 @@ async def artiNama(bot : Client, message : Message):
     if not msg:
         return await message.reply(text="❌ Berikan Saya Sebuah Nama - Contoh /artiNama Sabrina")
 
-    xx = await message.reply(f"{EMOJIS}")
+    xx = await message.reply(f"{random.choice(EMOJIS)}")
 
     try: 
         await bot.send_message(chat_id, DESKRIPTIF.format(msg, arti, deskripsi))

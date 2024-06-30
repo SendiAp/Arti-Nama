@@ -118,7 +118,6 @@ async def artiNama(bot : Client, message : Message):
 
 @bot.on_message(filters.command("artiNama") & filters.group)
 @gcast
-async def cekkhodam(bot : Client, message : Message):
 async def artiNama(bot : Client, message : Message):
     chat_id = message.chat.id
     msg = get_arg(message)

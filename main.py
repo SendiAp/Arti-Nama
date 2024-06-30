@@ -222,7 +222,7 @@ async def stats(bot : Client, message : Message):
 
 FORCE_SUB_CHANNEL = "PTSMProject"
 FORCE_SUB_GROUP = "KetikaOtakPerluInspirasi1"
-BOT_USERNAME = "CekKhodam1Bot"
+BOT_USERNAME = "ArtiiNamaBot"
 
 FORCESUB = InlineKeyboardMarkup(
     [

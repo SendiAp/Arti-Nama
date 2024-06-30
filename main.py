@@ -3,7 +3,7 @@ from pyrogram import Client, filters
 from pyrogram.types import *
 from pyrogram import *
 from config import *
-from khodam import *
+from nama import *
 from db import *
 import random
 import os

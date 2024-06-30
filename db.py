@@ -9,6 +9,7 @@ db = mongo_client[DB_NAME]
 
 actchat = db['ACTIVEDVEDCHATS']
 gcastdb = db['GCAST']
+coupledb = db.['COUPLE']
 
 #BROADCAST_GRUB
 async def get_actived_chats() -> list:

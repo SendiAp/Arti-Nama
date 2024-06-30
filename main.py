@@ -173,7 +173,7 @@ async def send_msg(chat_id, message: Message):
 
 @bot.on_message(filters.command("pasangan") & filters.group)
 @gcast
-async def artiNama(bot : Client, message : Message):
+async def artiNama(client : Client, message : Message):
     if message.chat.type == ChatType.PRIVATE:
         return await message.reply_text("Perintah ini hanya dapat digunakan dalam grup.")
     try:

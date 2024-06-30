@@ -112,8 +112,9 @@ async def artiNama(bot : Client, message : Message):
     try: 
         await bot.send_message(chat_id, DESKRIPTIF.format(msg, arti, deskripsi))
         await xx.delete()
-    except BaseException as e:
-        return await message.reply(f"`{e}`\n\nBuruan lapor @pikyus7")
+    except FloodWait as e:
+        await asyncio.sleep(e.value)
+        await message.reply_text(f"🐚 <b>{KERANG}</b>")
 
 @bot.on_message(filters.command("cekKhodam") & filters.group)
 @gcast

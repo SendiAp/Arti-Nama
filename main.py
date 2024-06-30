@@ -102,15 +102,15 @@ async def artiNama(bot : Client, message : Message):
     chat_id = message.chat.id
     msg = get_arg(message)
 
-    Arti = random.choice(Arti)
-    Deskripsi = random.choice(Deskripsi)
+    arti = random.choice(Arti)
+    deskripsi = random.choice(Deskripsi)
     if not msg:
         return await message.reply(text="❌ Berikan Saya Sebuah Nama - Contoh /artiNama Sabrina")
 
     xx = await message.reply(f"{EMOJIS}")
 
     try: 
-        await bot.send_message(chat_id, DESKRIPTIF.format(msg, Arti, Deskripsi))
+        await bot.send_message(chat_id, DESKRIPTIF.format(msg, arti, deskripsi))
         await xx.delete()
     except BaseException as e:
         return await message.reply(f"`{e}`\n\nBuruan lapor @pikyus7")
